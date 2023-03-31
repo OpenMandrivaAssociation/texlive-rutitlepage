@@ -1,6 +1,6 @@
 Name:		texlive-rutitlepage
 Version:	62143
-Release:	1
+Release:	2
 Summary:	Radboud University Titlepage Package
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/rutitlepage
