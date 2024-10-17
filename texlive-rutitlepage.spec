@@ -3,7 +3,7 @@ Version:	62143
 Release:	2
 Summary:	Radboud University Titlepage Package
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/rutitlepage
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/rutitlepage
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/rutitlepage.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/rutitlepage.doc.r%{version}.tar.xz
