@@ -1,42 +1,24 @@
-Name:		texlive-rutitlepage
-Version:	62143
-Release:	2
+%global tl_name rutitlepage
+%global tl_revision 76924
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	3.0
+Release:	%{tl_revision}.1
 Summary:	Radboud University Titlepage Package
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/rutitlepage
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/rutitlepage.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/rutitlepage.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/rutitlepage.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/rutitlepage.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/rutitlepage.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/rutitlepage.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This is an unofficial LaTeX package to generate titlepages for
-the Radboud University, Nijmegen. It uses official vector logos
-from the university. This package requires the following other
-LaTeX packages: geometry, graphicx, ifpdf, keyval, iflang, and,
-optionnaly, babel-dutch.
+This is an unofficial LaTeX package to generate titlepages for the
+Radboud University, Nijmegen. It uses official vector logos from the
+university. This package requires the following other LaTeX packages:
+geometry, graphicx, ifpdf, keyval, iflang, and, optionally, babel-dutch.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/latex/rutitlepage
-%{_texmfdistdir}/tex/latex/rutitlepage
-%doc %{_texmfdistdir}/doc/latex/rutitlepage
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
